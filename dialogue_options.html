@@ -1,0 +1,56 @@
+<html>
+  
+  <head>
+    
+    <!--created by: C5_06 Dow-->
+    
+    <title>
+      Sounds Genrator
+    </title>
+    
+    <script>
+      function binary(x, n) {
+  	    return Array(n-String((x >>> 0).toString(2)).length+1).join('0')+(x >>> 0).toString(2);
+      }
+      function dialogue() {
+        const NPCName = document.getElementsByName("NPCName")[0].value;
+        const sceneTag = document.getElementsByName("sceneTag")[0].value;
+        const textNPC = document.getElementsByName("textNPC")[0].value.replaceAll('\^','**').replace(/(\d)+x/g, `$1*x`).trim();
+        const options = document.getElementsByName("options")[0].value.trim().split('');
+        let openCommands = '';
+        let scenes = '';
+        for (var i = 0; i < 2**5; i++) {
+	        const binaryId = binary(i, 5).split('');
+          const comma = (i == 36) ? ',' : '';
+          openCommands += (y <= animationLength) `dialogue open ${selectorNPC} ${selectorPlayer}[scores={${options[0]}=${binaryId[0]},${options[1]}=${binaryId[1]},${options[2]}=${binaryId[2]},${options[3]}=${binaryId[3]},${options[4]}=${binaryId[4]}}] GUI_options_page1_I0N0R0Sa0S0"${comma}`;
+        }
+        document.getElementById("dialogues").innerHTML =`<br>{<br>&emsp;"format_version":&emsp;"1.14",<br>&emsp;"minecraft:npc_dialogue":&emsp;{<br>&emsp;&emsp;"scenes":&emsp;[<br>&emsp;&emsp;&emsp;{<br>&emsp;&emsp;&emsp;&emsp;"scene_tag":&emsp;"${sceneTag}",<br>&emsp;&emsp;&emsp;&emsp;"npc_name":&emsp;"${NPCName}",<br>&emsp;&emsp;&emsp;&emsp;"text":&emsp;"${textNPC}",<br>&emsp;&emsp;&emsp;&emsp;"on_open_commands":&emsp;[<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;${openCommands}<br>&emsp;&emsp;&emsp;&emsp;]<br>&emsp;&emsp;&emsp;},<br>&emsp;&emsp;&emsp;{<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;${scenes}<br>&emsp;&emsp;&emsp;}<br>&emsp;&emsp;]<br>&emsp;}<br>}`
+      }
+    </script>
+    
+  </head>
+
+  <body>
+    <strong>
+      NPC Dialogue Options Generator<br><br>
+    </strong>
+    <form method="get">
+      NPC Name: <input type="text" name="NPCName">
+    </form>
+    <form method="get">
+      Scene Tag: <input type="text" name="sceneTag">
+    </form>
+    <form method="get">
+      Text: <input type="text" name="textNPC">
+    </form>
+    <form method="get">
+      Options (by commas): <input type="text" name="options">
+    </form>
+    <button onclick="dialogue()">
+      Generate
+    </button>
+    <p id="dialogues">
+    </p>
+  </body>
+  
+</html>

@@ -1,0 +1,55 @@
+<html>
+  
+  <head>
+    
+    <!--created by: C5_06 Dow-->
+    
+    <title>
+      Sounds Genrator
+    </title>
+    
+    <script>
+    
+      function sounds() {
+        const animationName = document.getElementsByName("animationName")[0].value;
+        const soundId = document.getElementsByName("soundId")[0].value;
+        const equation = document.getElementsByName("equation")[0].value.replaceAll('\^','**').replace(/(\d)+x/g, `$1*x`).trim();
+        const animationLength = document.getElementsByName("animationLength")[0].value;
+        let output = '';
+        for (let x = 0, y = 0; y <= animationLength; x++) {
+          y = eval(equation);
+          if (y == animationLength) {
+            continue;
+          }
+          output += (y <= animationLength) ? `<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"${y}": "${soundId}",`: `<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"${animationLength}": "${soundId}"`;
+        }
+        document.getElementById("sound").innerHTML = `{<br>&emsp;&emsp;"format_version": "1.8.0",<br>&emsp;&emsp;"animations": {<br>&emsp;&emsp;&emsp;&emsp;"animation.${animationName}": {<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"animation_length": ${animationLength},<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"sound_effects": {${output}<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;},<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"loop": true<br>&emsp;&emsp;&emsp;&emsp;}<br>&emsp;&emsp;}<br>}`;
+      }
+    </script>
+    
+  </head>
+
+  <body>
+    <strong>
+      Timed Sounds Animation Generator<br><br>
+    </strong>
+    <form method="get">
+      Animation Name: <input type="text" name="animationName">
+    </form>
+    <form method="get">
+      Sound Id: <input type="text" name="soundId">
+    </form>
+    <form method="get">
+      Animation Length: <input type="text" name="animationLength">
+    </form>
+    <form method="get">
+      Equation: <input type="text" name="equation">
+    </form>
+    <button onclick="sounds()">
+      Generate
+    </button>
+    <p id="sound">
+    </p>
+  </body>
+  
+</html>
