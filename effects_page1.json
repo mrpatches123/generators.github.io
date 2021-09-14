@@ -1,0 +1,1519 @@
+//bridge-file-version: #6
+{
+	"format_version": "1.14",
+	"minecraft:npc_dialogue": {
+		"scenes": [
+			{
+				"scene_tag": "GUI_effects_page1",
+				"npc_name": "§l§aAdmin GUI",
+				"text": "§l§dEffects",
+				"on_open_commands": [
+					"/dialogue open @s @s[scores={invisibility=0,night_vision=0,regeneration=0,saturation=0,speed=0}] GUI_options_page1_I0N0R0Sa0S0",
+					"/dialogue open @s @s[scores={invisibility=1,night_vision=0,regeneration=0,saturation=0,speed=0}] GUI_options_page1_I1N0R0Sa0S0",
+					"/dialogue open @s @s[scores={invisibility=0,night_vision=1,regeneration=0,saturation=0,speed=0}] GUI_options_page1_I0N1R0Sa0S0",
+					"/dialogue open @s @s[scores={invisibility=0,night_vision=0,regeneration=1,saturation=0,speed=0}] GUI_options_page1_I0N0R1Sa0S0",
+					"/dialogue open @s @s[scores={invisibility=0,night_vision=0,regeneration=0,saturation=1,speed=0}] GUI_options_page1_I0N0R0Sa1S0",
+					"/dialogue open @s @s[scores={invisibility=0,night_vision=0,regeneration=0,saturation=0,speed=1}] GUI_options_page1_I0N0R0Sa0S1",
+					"/dialogue open @s @s[scores={invisibility=0,night_vision=0,regeneration=1,saturation=1,speed=0}] GUI_options_page1_I0N0R1Sa1S0",
+					"/dialogue open @s @s[scores={invisibility=1,night_vision=0,regeneration=0,saturation=0,speed=1}] GUI_options_page1_I1N0R0Sa0S1",
+					"/dialogue open @s @s[scores={invisibility=0,night_vision=1,regeneration=1,saturation=0,speed=0}] GUI_options_page1_I0N1R1Sa0S0",
+					"/dialogue open @s @s[scores={invisibility=0,night_vision=0,regeneration=0,saturation=1,speed=1}] GUI_options_page1_I0N0R0Sa1S1",
+					"/dialogue open @s @s[scores={invisibility=1,night_vision=1,regeneration=0,saturation=0,speed=0}] GUI_options_page1_I1N1R0Sa0S0",
+					"/dialogue open @s @s[scores={invisibility=0,night_vision=1,regeneration=0,saturation=1,speed=0}] GUI_options_page1_I0N1R0Sa1S0",
+					"/dialogue open @s @s[scores={invisibility=0,night_vision=0,regeneration=1,saturation=0,speed=1}] GUI_options_page1_I0N0R1Sa0S1",
+					"/dialogue open @s @s[scores={invisibility=1,night_vision=0,regeneration=1,saturation=0,speed=0}] GUI_options_page1_I1N0R1Sa0S0",
+					"/dialogue open @s @s[scores={invisibility=1,night_vision=1,regeneration=1,saturation=0,speed=0}] GUI_options_page1_I1N1R1Sa0S0",
+					"/dialogue open @s @s[scores={invisibility=0,night_vision=0,regeneration=1,saturation=1,speed=1}] GUI_options_page1_I0N0R1Sa1S1",
+					"/dialogue open @s @s[scores={invisibility=0,night_vision=1,regeneration=1,saturation=1,speed=0}] GUI_options_page1_I0N1R1Sa1S0",
+					"/dialogue open @s @s[scores={invisibility=1,night_vision=0,regeneration=1,saturation=0,speed=1}] GUI_options_page1_I1N0R1Sa0S1",
+					"/dialogue open @s @s[scores={invisibility=0,night_vision=1,regeneration=0,saturation=1,speed=1}] GUI_options_page1_I0N1R0Sa1S1",
+					"/dialogue open @s @s[scores={invisibility=1,night_vision=1,regeneration=0,saturation=1,speed=0}] GUI_options_page1_I1N1R0Sa1S0",
+					"/dialogue open @s @s[scores={invisibility=1,night_vision=0,regeneration=1,saturation=1,speed=0}] GUI_options_page1_I1N0R1Sa1S0",
+					"/dialogue open @s @s[scores={invisibility=0,night_vision=1,regeneration=1,saturation=0,speed=1}] GUI_options_page1_I0N1R1Sa0S1",
+					"/dialogue open @s @s[scores={invisibility=0,night_vision=1,regeneration=1,saturation=1,speed=1}] GUI_options_page1_I0N1R1Sa1S1",
+					"/dialogue open @s @s[scores={invisibility=1,night_vision=1,regeneration=1,saturation=1,speed=0}] GUI_options_page1_I1N1R1Sa1S0",
+					"/dialogue open @s @s[scores={invisibility=1,night_vision=1,regeneration=1,saturation=1,speed=1}] GUI_options_page1_I1N1R1Sa1S1",
+					"/dialogue open @s @s[scores={invisibility=1,night_vision=1,regeneration=0,saturation=0,speed=1}] GUI_options_page1_I1N1R0Sa0S1",
+					"/dialogue open @s @s[scores={invisibility=1,night_vision=0,regeneration=0,saturation=1,speed=1}] GUI_options_page1_I1N0R0Sa1S1",
+					"/dialogue open @s @s[scores={invisibility=1,night_vision=1,regeneration=0,saturation=1,speed=1}] GUI_options_page1_I1N1R0Sa1S1",
+					"/dialogue open @s @s[scores={invisibility=1,night_vision=0,regeneration=1,saturation=1,speed=1}] GUI_options_page1_I1N0R1Sa1S1",
+					"/dialogue open @s @s[scores={invisibility=1,night_vision=1,regeneration=1,saturation=0,speed=1}] GUI_options_page1_I1N1R1Sa0S1",
+					"/dialogue open @s @s[scores={invisibility=1,night_vision=0,regeneration=0,saturation=1,speed=0}] GUI_options_page1_I1N0R0Sa1S0",
+					"/dialogue open @s @s[scores={invisibility=0,night_vision=1,regeneration=0,saturation=0,speed=1}] GUI_options_page1_I0N1R0Sa0S1"
+				]
+			},
+			{
+				"scene_tag": "GUI_options_page1_I0N0R0Sa0S0",
+				"npc_name": "§l§aAdmin GUI",
+				"text": "§l§dEffects",
+				"buttons": [
+					{
+						"name": "§7Invis: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/invisibility"
+						]
+					},
+					{
+						"name": "§2NV: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/night_vision"
+						]
+					},
+					{
+						"name": "§dRegen: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/regeneration"
+						]
+					},
+					{
+						"name": "§6Food: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/saturation"
+						]
+					},
+					{
+						"name": "§bSpeed: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/speed"
+						]
+					},
+					{
+						"name": "§7Page 2",
+						"commands": [
+							"/function GUI/Open/Effects/page2"
+						]
+					}
+				],
+				"on_close_commands": [
+					"/function GUI/fix"
+				]
+			},
+			{
+				"scene_tag": "GUI_options_page1_I1N0R0Sa0S0",
+				"npc_name": "§l§aAdmin GUI",
+				"text": "§l§dEffects",
+				"buttons": [
+					{
+						"name": "§7Invis: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/invisibility"
+						]
+					},
+					{
+						"name": "§2NV: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/night_vision"
+						]
+					},
+					{
+						"name": "§dRegen: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/regeneration"
+						]
+					},
+					{
+						"name": "§6Food: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/saturation"
+						]
+					},
+					{
+						"name": "§bSpeed: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/speed"
+						]
+					},
+					{
+						"name": "§7Page 2",
+						"commands": [
+							"/function GUI/Open/Effects/page2"
+						]
+					}
+				],
+				"on_close_commands": [
+					"/function GUI/fix"
+				]
+			},
+			{
+				"scene_tag": "GUI_options_page1_I0N1R0Sa0S0",
+				"npc_name": "§l§aAdmin GUI",
+				"text": "§l§dEffects",
+				"buttons": [
+					{
+						"name": "§7Invis: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/invisibility"
+						]
+					},
+					{
+						"name": "§2NV: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/night_vision"
+						]
+					},
+					{
+						"name": "§dRegen: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/regeneration"
+						]
+					},
+					{
+						"name": "§6Food: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/saturation"
+						]
+					},
+					{
+						"name": "§bSpeed: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/speed"
+						]
+					},
+					{
+						"name": "§7Page 2",
+						"commands": [
+							"/function GUI/Open/Effects/page2"
+						]
+					}
+				],
+				"on_close_commands": [
+					"/function GUI/fix"
+				]
+			},
+			{
+				"scene_tag": "GUI_options_page1_I0N0R1Sa0S0",
+				"npc_name": "§l§aAdmin GUI",
+				"text": "§l§dEffects",
+				"buttons": [
+					{
+						"name": "§7Invis: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/invisibility"
+						]
+					},
+					{
+						"name": "§2NV: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/night_vision"
+						]
+					},
+					{
+						"name": "§dRegen: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/regeneration"
+						]
+					},
+					{
+						"name": "§6Food: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/saturation"
+						]
+					},
+					{
+						"name": "§bSpeed: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/speed"
+						]
+					},
+					{
+						"name": "§7Page 2",
+						"commands": [
+							"/function GUI/Open/Effects/page2"
+						]
+					}
+				],
+				"on_close_commands": [
+					"/function GUI/fix"
+				]
+			},
+			{
+				"scene_tag": "GUI_options_page1_I0N0R0Sa1S0",
+				"npc_name": "§l§aAdmin GUI",
+				"text": "§l§dEffects",
+				"buttons": [
+					{
+						"name": "§7Invis: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/invisibility"
+						]
+					},
+					{
+						"name": "§2NV: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/night_vision"
+						]
+					},
+					{
+						"name": "§dRegen: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/regeneration"
+						]
+					},
+					{
+						"name": "§6Food: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/saturation"
+						]
+					},
+					{
+						"name": "§bSpeed: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/speed"
+						]
+					},
+					{
+						"name": "§7Page 2",
+						"commands": [
+							"/function GUI/Open/Effects/page2"
+						]
+					}
+				],
+				"on_close_commands": [
+					"/function GUI/fix"
+				]
+			},
+			{
+				"scene_tag": "GUI_options_page1_I0N0R0Sa0S1",
+				"npc_name": "§l§aAdmin GUI",
+				"text": "§l§dEffects",
+				"buttons": [
+					{
+						"name": "§7Invis: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/invisibility"
+						]
+					},
+					{
+						"name": "§2NV: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/night_vision"
+						]
+					},
+					{
+						"name": "§dRegen: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/regeneration"
+						]
+					},
+					{
+						"name": "§6Food: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/saturation"
+						]
+					},
+					{
+						"name": "§bSpeed: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/speed"
+						]
+					},
+					{
+						"name": "§7Page 2",
+						"commands": [
+							"/function GUI/Open/Effects/page2"
+						]
+					}
+				],
+				"on_close_commands": [
+					"/function GUI/fix"
+				]
+			},
+			{
+				"scene_tag": "GUI_options_page1_I0N0R1Sa1S0",
+				"npc_name": "§l§aAdmin GUI",
+				"text": "§l§dEffects",
+				"buttons": [
+					{
+						"name": "§7Invis: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/invisibility"
+						]
+					},
+					{
+						"name": "§2NV: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/night_vision"
+						]
+					},
+					{
+						"name": "§dRegen: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/regeneration"
+						]
+					},
+					{
+						"name": "§6Food: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/saturation"
+						]
+					},
+					{
+						"name": "§bSpeed: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/speed"
+						]
+					},
+					{
+						"name": "§7Page 2",
+						"commands": [
+							"/function GUI/Open/Effects/page2"
+						]
+					}
+				],
+				"on_close_commands": [
+					"/function GUI/fix"
+				]
+			},
+			{
+				"scene_tag": "GUI_options_page1_I1N0R0Sa0S1",
+				"npc_name": "§l§aAdmin GUI",
+				"text": "§l§dEffects",
+				"buttons": [
+					{
+						"name": "§7Invis: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/invisibility"
+						]
+					},
+					{
+						"name": "§2NV: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/night_vision"
+						]
+					},
+					{
+						"name": "§dRegen: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/regeneration"
+						]
+					},
+					{
+						"name": "§6Food: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/saturation"
+						]
+					},
+					{
+						"name": "§bSpeed: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/speed"
+						]
+					},
+					{
+						"name": "§7Page 2",
+						"commands": [
+							"/function GUI/Open/Effects/page2"
+						]
+					}
+				],
+				"on_close_commands": [
+					"/function GUI/fix"
+				]
+			},
+			{
+				"scene_tag": "GUI_options_page1_I0N1R1Sa0S0",
+				"npc_name": "§l§aAdmin GUI",
+				"text": "§l§dEffects",
+				"buttons": [
+					{
+						"name": "§7Invis: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/invisibility"
+						]
+					},
+					{
+						"name": "§2NV: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/night_vision"
+						]
+					},
+					{
+						"name": "§dRegen: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/regeneration"
+						]
+					},
+					{
+						"name": "§6Food: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/saturation"
+						]
+					},
+					{
+						"name": "§bSpeed: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/speed"
+						]
+					},
+					{
+						"name": "§7Page 2",
+						"commands": [
+							"/function GUI/Open/Effects/page2"
+						]
+					}
+				],
+				"on_close_commands": [
+					"/function GUI/fix"
+				]
+			},
+			{
+				"scene_tag": "GUI_options_page1_I0N0R0Sa1S1",
+				"npc_name": "§l§aAdmin GUI",
+				"text": "§l§dEffects",
+				"buttons": [
+					{
+						"name": "§7Invis: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/invisibility"
+						]
+					},
+					{
+						"name": "§2NV: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/night_vision"
+						]
+					},
+					{
+						"name": "§dRegen: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/regeneration"
+						]
+					},
+					{
+						"name": "§6Food: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/saturation"
+						]
+					},
+					{
+						"name": "§bSpeed: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/speed"
+						]
+					},
+					{
+						"name": "§7Page 2",
+						"commands": [
+							"/function GUI/Open/Effects/page2"
+						]
+					}
+				],
+				"on_close_commands": [
+					"/function GUI/fix"
+				]
+			},
+			{
+				"scene_tag": "GUI_options_page1_I1N1R0Sa0S0",
+				"npc_name": "§l§aAdmin GUI",
+				"text": "§l§dEffects",
+				"buttons": [
+					{
+						"name": "§7Invis: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/invisibility"
+						]
+					},
+					{
+						"name": "§2NV: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/night_vision"
+						]
+					},
+					{
+						"name": "§dRegen: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/regeneration"
+						]
+					},
+					{
+						"name": "§6Food: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/saturation"
+						]
+					},
+					{
+						"name": "§bSpeed: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/speed"
+						]
+					},
+					{
+						"name": "§7Page 2",
+						"commands": [
+							"/function GUI/Open/Effects/page2"
+						]
+					}
+				],
+				"on_close_commands": [
+					"/function GUI/fix"
+				]
+			},
+			{
+				"scene_tag": "GUI_options_page1_I0N1R0Sa1S0",
+				"npc_name": "§l§aAdmin GUI",
+				"text": "§l§dEffects",
+				"buttons": [
+					{
+						"name": "§7Invis: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/invisibility"
+						]
+					},
+					{
+						"name": "§2NV: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/night_vision"
+						]
+					},
+					{
+						"name": "§dRegen: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/regeneration"
+						]
+					},
+					{
+						"name": "§6Food: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/saturation"
+						]
+					},
+					{
+						"name": "§bSpeed: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/speed"
+						]
+					},
+					{
+						"name": "§7Page 2",
+						"commands": [
+							"/function GUI/Open/Effects/page2"
+						]
+					}
+				],
+				"on_close_commands": [
+					"/function GUI/fix"
+				]
+			},
+			{
+				"scene_tag": "GUI_options_page1_I0N0R1Sa0S1",
+				"npc_name": "§l§aAdmin GUI",
+				"text": "§l§dEffects",
+				"buttons": [
+					{
+						"name": "§7Invis: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/invisibility"
+						]
+					},
+					{
+						"name": "§2NV: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/night_vision"
+						]
+					},
+					{
+						"name": "§dRegen: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/regeneration"
+						]
+					},
+					{
+						"name": "§6Food: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/saturation"
+						]
+					},
+					{
+						"name": "§bSpeed: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/speed"
+						]
+					},
+					{
+						"name": "§7Page 2",
+						"commands": [
+							"/function GUI/Open/Effects/page2"
+						]
+					}
+				],
+				"on_close_commands": [
+					"/function GUI/fix"
+				]
+			},
+			{
+				"scene_tag": "GUI_options_page1_I1N0R1Sa0S0",
+				"npc_name": "§l§aAdmin GUI",
+				"text": "§l§dEffects",
+				"buttons": [
+					{
+						"name": "§7Invis: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/invisibility"
+						]
+					},
+					{
+						"name": "§2NV: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/night_vision"
+						]
+					},
+					{
+						"name": "§dRegen: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/regeneration"
+						]
+					},
+					{
+						"name": "§6Food: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/saturation"
+						]
+					},
+					{
+						"name": "§bSpeed: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/speed"
+						]
+					},
+					{
+						"name": "§7Page 2",
+						"commands": [
+							"/function GUI/Open/Effects/page2"
+						]
+					}
+				],
+				"on_close_commands": [
+					"/function GUI/fix"
+				]
+			},
+			{
+				"scene_tag": "GUI_options_page1_I1N1R1Sa0S0",
+				"npc_name": "§l§aAdmin GUI",
+				"text": "§l§dEffects",
+				"buttons": [
+					{
+						"name": "§7Invis: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/invisibility"
+						]
+					},
+					{
+						"name": "§2NV: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/night_vision"
+						]
+					},
+					{
+						"name": "§dRegen: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/regeneration"
+						]
+					},
+					{
+						"name": "§6Food: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/saturation"
+						]
+					},
+					{
+						"name": "§bSpeed: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/speed"
+						]
+					},
+					{
+						"name": "§7Page 2",
+						"commands": [
+							"/function GUI/Open/Effects/page2"
+						]
+					}
+				],
+				"on_close_commands": [
+					"/function GUI/fix"
+				]
+			},
+			{
+				"scene_tag": "GUI_options_page1_I0N0R1Sa1S1",
+				"npc_name": "§l§aAdmin GUI",
+				"text": "§l§dEffects",
+				"buttons": [
+					{
+						"name": "§7Invis: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/invisibility"
+						]
+					},
+					{
+						"name": "§2NV: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/night_vision"
+						]
+					},
+					{
+						"name": "§dRegen: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/regeneration"
+						]
+					},
+					{
+						"name": "§6Food: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/saturation"
+						]
+					},
+					{
+						"name": "§bSpeed: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/speed"
+						]
+					},
+					{
+						"name": "§7Page 2",
+						"commands": [
+							"/function GUI/Open/Effects/page2"
+						]
+					}
+				],
+				"on_close_commands": [
+					"/function GUI/fix"
+				]
+			},
+			{
+				"scene_tag": "GUI_options_page1_I0N1R1Sa1S0",
+				"npc_name": "§l§aAdmin GUI",
+				"text": "§l§dEffects",
+				"buttons": [
+					{
+						"name": "§7Invis: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/invisibility"
+						]
+					},
+					{
+						"name": "§2NV: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/night_vision"
+						]
+					},
+					{
+						"name": "§dRegen: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/regeneration"
+						]
+					},
+					{
+						"name": "§6Food: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/saturation"
+						]
+					},
+					{
+						"name": "§bSpeed: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/speed"
+						]
+					},
+					{
+						"name": "§7Page 2",
+						"commands": [
+							"/function GUI/Open/Effects/page2"
+						]
+					}
+				],
+				"on_close_commands": [
+					"/function GUI/fix"
+				]
+			},
+			{
+				"scene_tag": "GUI_options_page1_I1N0R1Sa0S1",
+				"npc_name": "§l§aAdmin GUI",
+				"text": "§l§dEffects",
+				"buttons": [
+					{
+						"name": "§7Invis: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/invisibility"
+						]
+					},
+					{
+						"name": "§2NV: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/night_vision"
+						]
+					},
+					{
+						"name": "§dRegen: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/regeneration"
+						]
+					},
+					{
+						"name": "§6Food: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/saturation"
+						]
+					},
+					{
+						"name": "§bSpeed: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/speed"
+						]
+					},
+					{
+						"name": "§7Page 2",
+						"commands": [
+							"/function GUI/Open/Effects/page2"
+						]
+					}
+				],
+				"on_close_commands": [
+					"/function GUI/fix"
+				]
+			},
+			{
+				"scene_tag": "GUI_options_page1_I0N1R0Sa1S1",
+				"npc_name": "§l§aAdmin GUI",
+				"text": "§l§dEffects",
+				"buttons": [
+					{
+						"name": "§7Invis: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/invisibility"
+						]
+					},
+					{
+						"name": "§2NV: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/night_vision"
+						]
+					},
+					{
+						"name": "§dRegen: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/regeneration"
+						]
+					},
+					{
+						"name": "§6Food: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/saturation"
+						]
+					},
+					{
+						"name": "§bSpeed: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/speed"
+						]
+					},
+					{
+						"name": "§7Page 2",
+						"commands": [
+							"/function GUI/Open/Effects/page2"
+						]
+					}
+				],
+				"on_close_commands": [
+					"/function GUI/fix"
+				]
+			},
+			{
+				"scene_tag": "GUI_options_page1_I1N1R0Sa1S0",
+				"npc_name": "§l§aAdmin GUI",
+				"text": "§l§dEffects",
+				"buttons": [
+					{
+						"name": "§7Invis: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/invisibility"
+						]
+					},
+					{
+						"name": "§2NV: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/night_vision"
+						]
+					},
+					{
+						"name": "§dRegen: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/regeneration"
+						]
+					},
+					{
+						"name": "§6Food: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/saturation"
+						]
+					},
+					{
+						"name": "§bSpeed: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/speed"
+						]
+					},
+					{
+						"name": "§7Page 2",
+						"commands": [
+							"/function GUI/Open/Effects/page2"
+						]
+					}
+				],
+				"on_close_commands": [
+					"/function GUI/fix"
+				]
+			},
+			{
+				"scene_tag": "GUI_options_page1_I1N0R1Sa1S0",
+				"npc_name": "§l§aAdmin GUI",
+				"text": "§l§dEffects",
+				"buttons": [
+					{
+						"name": "§7Invis: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/invisibility"
+						]
+					},
+					{
+						"name": "§2NV: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/night_vision"
+						]
+					},
+					{
+						"name": "§dRegen: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/regeneration"
+						]
+					},
+					{
+						"name": "§6Food: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/saturation"
+						]
+					},
+					{
+						"name": "§bSpeed: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/speed"
+						]
+					},
+					{
+						"name": "§7Page 2",
+						"commands": [
+							"/function GUI/Open/Effects/page2"
+						]
+					}
+				],
+				"on_close_commands": [
+					"/function GUI/fix"
+				]
+			},
+			{
+				"scene_tag": "GUI_options_page1_I0N1R1Sa0S1",
+				"npc_name": "§l§aAdmin GUI",
+				"text": "§l§dEffects",
+				"buttons": [
+					{
+						"name": "§7Invis: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/invisibility"
+						]
+					},
+					{
+						"name": "§2NV: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/night_vision"
+						]
+					},
+					{
+						"name": "§dRegen: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/regeneration"
+						]
+					},
+					{
+						"name": "§6Food: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/saturation"
+						]
+					},
+					{
+						"name": "§bSpeed: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/speed"
+						]
+					},
+					{
+						"name": "§7Page 2",
+						"commands": [
+							"/function GUI/Open/Effects/page2"
+						]
+					}
+				],
+				"on_close_commands": [
+					"/function GUI/fix"
+				]
+			},
+			{
+				"scene_tag": "GUI_options_page1_I0N1R1Sa1S1",
+				"npc_name": "§l§aAdmin GUI",
+				"text": "§l§dEffects",
+				"buttons": [
+					{
+						"name": "§7Invis: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/invisibility"
+						]
+					},
+					{
+						"name": "§2NV: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/night_vision"
+						]
+					},
+					{
+						"name": "§dRegen: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/regeneration"
+						]
+					},
+					{
+						"name": "§6Food: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/saturation"
+						]
+					},
+					{
+						"name": "§bSpeed: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/speed"
+						]
+					},
+					{
+						"name": "§7Page 2",
+						"commands": [
+							"/function GUI/Open/Effects/page2"
+						]
+					}
+				],
+				"on_close_commands": [
+					"/function GUI/fix"
+				]
+			},
+			{
+				"scene_tag": "GUI_options_page1_I1N1R1Sa1S0",
+				"npc_name": "§l§aAdmin GUI",
+				"text": "§l§dEffects",
+				"buttons": [
+					{
+						"name": "§7Invis: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/invisibility"
+						]
+					},
+					{
+						"name": "§2NV: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/night_vision"
+						]
+					},
+					{
+						"name": "§dRegen: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/regeneration"
+						]
+					},
+					{
+						"name": "§6Food: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/saturation"
+						]
+					},
+					{
+						"name": "§bSpeed: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/speed"
+						]
+					},
+					{
+						"name": "§7Page 2",
+						"commands": [
+							"/function GUI/Open/Effects/page2"
+						]
+					}
+				],
+				"on_close_commands": [
+					"/function GUI/fix"
+				]
+			},
+			{
+				"scene_tag": "GUI_options_page1_I1N1R1Sa1S1",
+				"npc_name": "§l§aAdmin GUI",
+				"text": "§l§dEffects",
+				"buttons": [
+					{
+						"name": "§7Invis: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/invisibility"
+						]
+					},
+					{
+						"name": "§2NV: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/night_vision"
+						]
+					},
+					{
+						"name": "§dRegen: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/regeneration"
+						]
+					},
+					{
+						"name": "§6Food: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/saturation"
+						]
+					},
+					{
+						"name": "§bSpeed: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/speed"
+						]
+					},
+					{
+						"name": "§7Page 2",
+						"commands": [
+							"/function GUI/Open/Effects/page2"
+						]
+					}
+				],
+				"on_close_commands": [
+					"/function GUI/fix"
+				]
+			},
+			{
+				"scene_tag": "GUI_options_page1_I1N1R0Sa0S1",
+				"npc_name": "§l§aAdmin GUI",
+				"text": "§l§dEffects",
+				"buttons": [
+					{
+						"name": "§7Invis: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/invisibility"
+						]
+					},
+					{
+						"name": "§2NV: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/night_vision"
+						]
+					},
+					{
+						"name": "§dRegen: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/regeneration"
+						]
+					},
+					{
+						"name": "§6Food: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/saturation"
+						]
+					},
+					{
+						"name": "§bSpeed: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/speed"
+						]
+					},
+					{
+						"name": "§7Page 2",
+						"commands": [
+							"/function GUI/Open/Effects/page2"
+						]
+					}
+				],
+				"on_close_commands": [
+					"/function GUI/fix"
+				]
+			},
+			{
+				"scene_tag": "GUI_options_page1_I1N0R0Sa1S1",
+				"npc_name": "§l§aAdmin GUI",
+				"text": "§l§dEffects",
+				"buttons": [
+					{
+						"name": "§7Invis: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/invisibility"
+						]
+					},
+					{
+						"name": "§2NV: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/night_vision"
+						]
+					},
+					{
+						"name": "§dRegen: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/regeneration"
+						]
+					},
+					{
+						"name": "§6Food: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/saturation"
+						]
+					},
+					{
+						"name": "§bSpeed: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/speed"
+						]
+					},
+					{
+						"name": "§7Page 2",
+						"commands": [
+							"/function GUI/Open/Effects/page2"
+						]
+					}
+				],
+				"on_close_commands": [
+					"/function GUI/fix"
+				]
+			},
+			{
+				"scene_tag": "GUI_options_page1_I1N1R0Sa1S1",
+				"npc_name": "§l§aAdmin GUI",
+				"text": "§l§dEffects",
+				"buttons": [
+					{
+						"name": "§7Invis: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/invisibility"
+						]
+					},
+					{
+						"name": "§2NV: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/night_vision"
+						]
+					},
+					{
+						"name": "§dRegen: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/regeneration"
+						]
+					},
+					{
+						"name": "§6Food: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/saturation"
+						]
+					},
+					{
+						"name": "§bSpeed: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/speed"
+						]
+					},
+					{
+						"name": "§7Page 2",
+						"commands": [
+							"/function GUI/Open/Effects/page2"
+						]
+					}
+				],
+				"on_close_commands": [
+					"/function GUI/fix"
+				]
+			},
+			{
+				"scene_tag": "GUI_options_page1_I1N0R1Sa1S1",
+				"npc_name": "§l§aAdmin GUI",
+				"text": "§l§dEffects",
+				"buttons": [
+					{
+						"name": "§7Invis: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/invisibility"
+						]
+					},
+					{
+						"name": "§2NV: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/night_vision"
+						]
+					},
+					{
+						"name": "§dRegen: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/regeneration"
+						]
+					},
+					{
+						"name": "§6Food: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/saturation"
+						]
+					},
+					{
+						"name": "§bSpeed: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/speed"
+						]
+					},
+					{
+						"name": "§7Page 2",
+						"commands": [
+							"/function GUI/Open/Effects/page2"
+						]
+					}
+				],
+				"on_close_commands": [
+					"/function GUI/fix"
+				]
+			},
+			{
+				"scene_tag": "GUI_options_page1_I1N1R1Sa0S1",
+				"npc_name": "§l§aAdmin GUI",
+				"text": "§l§dEffects",
+				"buttons": [
+					{
+						"name": "§7Invis: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/invisibility"
+						]
+					},
+					{
+						"name": "§2NV: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/night_vision"
+						]
+					},
+					{
+						"name": "§dRegen: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/regeneration"
+						]
+					},
+					{
+						"name": "§6Food: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/saturation"
+						]
+					},
+					{
+						"name": "§bSpeed: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/speed"
+						]
+					},
+					{
+						"name": "§7Page 2",
+						"commands": [
+							"/function GUI/Open/Effects/page2"
+						]
+					}
+				],
+				"on_close_commands": [
+					"/function GUI/fix"
+				]
+			},
+			{
+				"scene_tag": "GUI_options_page1_I1N0R0Sa1S0",
+				"npc_name": "§l§aAdmin GUI",
+				"text": "§l§dEffects",
+				"buttons": [
+					{
+						"name": "§7Invis: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/invisibility"
+						]
+					},
+					{
+						"name": "§2NV: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/night_vision"
+						]
+					},
+					{
+						"name": "§dRegen: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/regeneration"
+						]
+					},
+					{
+						"name": "§6Food: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/saturation"
+						]
+					},
+					{
+						"name": "§bSpeed: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/speed"
+						]
+					},
+					{
+						"name": "§7Page 2",
+						"commands": [
+							"/function GUI/Open/Effects/page2"
+						]
+					}
+				],
+				"on_close_commands": [
+					"/function GUI/fix"
+				]
+			},
+			{
+				"scene_tag": "GUI_options_page1_I0N1R0Sa0S1",
+				"npc_name": "§l§aAdmin GUI",
+				"text": "§l§dEffects",
+				"buttons": [
+					{
+						"name": "§7Invis: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/invisibility"
+						]
+					},
+					{
+						"name": "§2NV: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/night_vision"
+						]
+					},
+					{
+						"name": "§dRegen: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/regeneration"
+						]
+					},
+					{
+						"name": "§6Food: §cOFF",
+						"commands": [
+							"/function GUI/Executions/Effects/saturation"
+						]
+					},
+					{
+						"name": "§bSpeed: §aON",
+						"commands": [
+							"/function GUI/Executions/Effects/speed"
+						]
+					},
+					{
+						"name": "§7Page 2",
+						"commands": [
+							"/function GUI/Open/Effects/page2"
+						]
+					}
+				],
+				"on_close_commands": [
+					"/function GUI/fix"
+				]
+			}
+		]
+	}
+}									
