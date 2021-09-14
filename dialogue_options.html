@@ -22,7 +22,7 @@
         for (var i = 0; i < 2**5; i++) {
 	        const binaryId = binary(i, 5).split('');
           const comma = (i == 36) ? ',' : '';
-          openCommands += (y <= animationLength) `dialogue open ${selectorNPC} ${selectorPlayer}[scores={${options[0]}=${binaryId[0]},${options[1]}=${binaryId[1]},${options[2]}=${binaryId[2]},${options[3]}=${binaryId[3]},${options[4]}=${binaryId[4]}}] GUI_options_page1_I0N0R0Sa0S0"${comma}`;
+          openCommands += `dialogue open ${selectorNPC} ${selectorPlayer}[scores={${options[0]}=${binaryId[0]},${options[1]}=${binaryId[1]},${options[2]}=${binaryId[2]},${options[3]}=${binaryId[3]},${options[4]}=${binaryId[4]}}] GUI_options_page1_I0N0R0Sa0S0"${comma}`;
         }
         document.getElementById("dialogues").innerHTML =`<br>{<br>&emsp;"format_version":&emsp;"1.14",<br>&emsp;"minecraft:npc_dialogue":&emsp;{<br>&emsp;&emsp;"scenes":&emsp;[<br>&emsp;&emsp;&emsp;{<br>&emsp;&emsp;&emsp;&emsp;"scene_tag":&emsp;"${sceneTag}",<br>&emsp;&emsp;&emsp;&emsp;"npc_name":&emsp;"${NPCName}",<br>&emsp;&emsp;&emsp;&emsp;"text":&emsp;"${textNPC}",<br>&emsp;&emsp;&emsp;&emsp;"on_open_commands":&emsp;[<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;${openCommands}<br>&emsp;&emsp;&emsp;&emsp;]<br>&emsp;&emsp;&emsp;},<br>&emsp;&emsp;&emsp;{<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;${scenes}<br>&emsp;&emsp;&emsp;}<br>&emsp;&emsp;]<br>&emsp;}<br>}`
       }
