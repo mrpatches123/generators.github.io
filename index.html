@@ -1,4 +1,4 @@
- <html>
+<html>
   
   <head>
     
@@ -8,9 +8,43 @@
       Dialogue Genrator
     </title>
     <style>
-      div {
-        white-space: nowrap;
-        border: 1px solid #cccccc;
+      body {font-family: Arial;}
+      
+      /* Style the tab */
+      .tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+      }
+      
+      /* Style the buttons inside the tab */
+      .tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 17px;
+      }
+      
+      /* Change background color of buttons on hover */
+      .tab button:hover {
+        background-color: #ddd;
+      }
+      
+      /* Create an active/current tablink class */
+      .tab button.active {
+        background-color: #ccc;
+      }
+      
+      /* Style the tab content */
+      .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
       }
     </style>
     <script>
@@ -18,19 +52,16 @@
         var element = document.createElement('a');
         element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
         element.setAttribute('download', filename);
-      
         element.style.display = 'none';
         document.body.appendChild(element);
-      
         element.click();
-      
         document.body.removeChild(element);
       }
       function set() {
         document.getElementById("NPCName").value = 'Crap';
         document.getElementById("sceneTag").value = 'crap_1';
         document.getElementById("textNPC").value = 'text';
-        for (let o = 0, optionsArray = ['one','two','three','four','five']; o < optionsArray.length; o++) {
+        for (let o = 0, optionsArray = ['one','two'/*,'three','four','five'*/]; o < optionsArray.length; o++) {
           document.getElementsByName("options")[o].value = optionsArray[o];
         } for (let o = 0, optionsArray = ['/say one','/say two','/say three','/say four','/say five']; o < optionsArray.length; o++) {
           document.getElementsByName("commands")[o].value = optionsArray[o];
@@ -49,41 +80,44 @@
         const textNPC = document.getElementById("textNPC").value;
         let options = [];
         for (let val of document.getElementsByName("options")) {
-          val.value = (val.value) ? val.value : 'Empty';
+          if (!val.value) {continue; }
           options.push(val.value);
         }
         let optionsScoreboards = [];
         let isOptionArray = [];
-        for (let o = 0; o < document.getElementsByName("optionScores").length; o++) {
+        for (let o = 0; o < document.getElementsByName("optionCheck").length; o++) {
           const val = document.getElementsByName("optionScores")[o].value;
           const valA = document.getElementsByName("optionCheck")[o].checked;
           if (val) {
-            isOptionArray.shift(true);
             optionsScoreboards.push(val);
+            isOptionArray.push(true);
           } else if (valA) {
-            optionsScoreboards.push(options[o]);
+            isOptionArray.push(true);
+            optionsScoreboards.push(options[o].replace(/§\w/g,''));
           } else {
-            isOptionArray.shift(false);
+            isOptionArray.push(false);
           }
         }
         const functionPath = document.getElementById("functionPath").value;
         let commandsArray = [];
         for (let o = 0, commands = document.getElementsByName("commands"); o < commands.length; o++) {
-          const command = commands[o].value
-          if(document.getElementById("functionCheck").checked == true) {
-            commandsArray.push(`/function ${functionPath.trim()}${(functionPath.endsWith('/') ? '' : '/')}${(command) ? command : options[o].replace(/§\w/, '')}`);
+          if (!options[o]) {continue; }
+          const command = commands[o].value;
+          console.log(options[0])
+          if (document.getElementById("functionCheck").checked) {
+            const option = (/(§\w)/.test(options[o])) ? options[o].replace(/(§\w)/g, '').toLowerCase() : options[o].toLowerCase();
+            commandsArray.push(`/function ${functionPath.trim()}${(functionPath.trim().endsWith('/')) ? '' : '/'}${(command) ? command : option}`);
           } else {
             commandsArray.push(command);
           }
         }
-        console.log(commandsArray);
         const selectorNPC = document.getElementById("selectorNPC").value;
         const selectorPlayer = document.getElementById("selectorPlayer").value;
-        console.log(2**optionsScoreboards.length);
         let openCommands = '';
         let scenes = '';
         let optionsId = [];
         for (let n = 0, a = 0;  n < options.length; n++) {
+          if (!isOptionArray[n]) {continue; }
           let id = '';
           if (n !== 0 && optionsId.findIndex(element => element == options[n].substring(0,1).toUpperCase()) !== -1) {
             ++a;
@@ -92,25 +126,25 @@
             id = options[n].substring(0,1).toUpperCase();
           } optionsId.push(id);
         }
-        console.log(optionsId)
         for (var i = 0; i < 2**optionsScoreboards.length; i++) {
-	        const binaryId = binary(i, options.length).split('');
+	        const binaryId = binary(i, optionsScoreboards.length).split('');
 	        const commaCommands = (i < 2**optionsScoreboards.length-1) ? ',' : '';
           openCommands +=  (optionsScoreboards.length > 0) ? `\u0009\u0009\u0009\u0009\u0009\"/dialogue open ${selectorNPC} ${selectorPlayer}[scores={${(optionsScoreboards[0]) ? optionsScoreboards[0] : ''}${(optionsScoreboards[0] && binaryId[0]) ? '=' : ''}${(binaryId[0]) ? binaryId[0] : ''}${(optionsScoreboards[1] && binaryId[1]) ? ',' : ''}${(optionsScoreboards[1]) ? optionsScoreboards[1] : ''}${(optionsScoreboards[1] && binaryId[1]) ? '=' : ''}${(binaryId[1]) ? binaryId[1] : ''}${(optionsScoreboards[2] && binaryId[2]) ? ',' : ''}${(optionsScoreboards[2]) ? optionsScoreboards[2] : ''}${(optionsScoreboards[2] && binaryId[2]) ? '=' : ''}${(binaryId[2]) ? binaryId[2] : ''}${(optionsScoreboards[3] && binaryId[3]) ? ',' : ''}${(optionsScoreboards[3]) ? optionsScoreboards[3] : ''}${(optionsScoreboards[3] && binaryId[3]) ? '=' : ''}${(binaryId[3]) ? binaryId[3] : ''}${(optionsScoreboards[4] && binaryId[4]) ? ',' : ''}${(optionsScoreboards[4]) ? optionsScoreboards[4] : ''}${(optionsScoreboards[4] && binaryId[4]) ? '=' : ''}${(binaryId[4]) ? binaryId[4] : ''}${(optionsScoreboards[5] && binaryId[5]) ? ',' : ''}${(optionsScoreboards[5]) ? optionsScoreboards[5] : ''}${(optionsScoreboards[5] && binaryId[5]) ? '=' : ''}${(binaryId[5]) ? binaryId[5] : ''}}] ${sceneTag}_${(optionsId[0]) ? optionsId[0] : ''}${(binaryId[0]) ? binaryId[0] : ''}${(optionsId[1]) ? optionsId[1] : ''}${(binaryId[1]) ? binaryId[1] : ''}${(optionsId[2]) ? optionsId[2] : ''}${(binaryId[2]) ? binaryId[2] : ''}${(optionsId[3]) ? optionsId[3] : ''}${(binaryId[3]) ? binaryId[3] : ''}${(optionsId[4]) ? optionsId[4] : ''}${(binaryId[4]) ? binaryId[4] : ''}${(optionsId[5]) ? optionsId[5] : ''}${(binaryId[5]) ? binaryId[5] : ''}"${commaCommands}\n`: '';
           let buttons = '';
-          for (let b = 0; b < 6; b++){
-            let commaButtons = (b < 6 ) ? ',' : '';
+          
+          for (let b = 0; b < options.length; b++){
+            let commaButtons = (b < options.length - 1) ? ',' : '';
             if (isOptionArray[b]) {
-              buttons += `\u0009\u0009\u0009\u0009{\n\u0009\u0009\u0009\u0009\u0009"name": "${options[b]}": ${(binaryId[b] == '0') ? '§cOFF' : '§aON'}",\n\u0009\u0009\u0009\u0009\u0009"commands": [\n\u0009\u0009\u0009\u0009\u0009\u0009"${commandsArray[b]}"\n\u0009\u0009\u0009\u0009\u0009]\n\u0009\u0009\u0009\u0009}${commaButtons}\n`;
+              buttons += `\u0009\u0009\u0009\u0009\u0009{\n\u0009\u0009\u0009\u0009\u0009\u0009"name": "${options[b]}: ${(binaryId[b] === "0") ? '§cOFF' : '§aON'}",\n\u0009\u0009\u0009\u0009\u0009\u0009"commands": [\n\u0009\u0009\u0009\u0009\u0009\u0009\u0009"${commandsArray[b]}"\n\u0009\u0009\u0009\u0009\u0009\u0009]\n\u0009\u0009\u0009\u0009\u0009}${commaButtons}\n`;
             } else if (options[b]) {
-              buttons += `\u0009\u0009\u0009\u0009{\n\u0009\u0009\u0009\u0009\u0009"name": "${options[b]}",\n\u0009\u0009\u0009\u0009\u0009"commands": [\n\u0009\u0009\u0009\u0009\u0009\u0009"${commandsArray[b]}"\n\u0009\u0009\u0009\u0009\u0009]\n\u0009\u0009\u0009\u0009}${commaButtons}\n`;
+              buttons += `\u0009\u0009\u0009\u0009\u0009{\n\u0009\u0009\u0009\u0009\u0009\u0009"name": "${options[b]}",\n\u0009\u0009\u0009\u0009\u0009\u0009"commands": [\n\u0009\u0009\u0009\u0009\u0009\u0009\u0009"${commandsArray[b]}"\n\u0009\u0009\u0009\u0009\u0009\u0009]\n\u0009\u0009\u0009\u0009\u0009}${commaButtons}\n`;
             } else {
-              buttons += `\u0009\u0009\u0009\u0009{\n\u0009\u0009\u0009\u0009\u0009"name": "§cEmpty",\n\u0009\u0009\u0009\u0009\u0009}${commaButtons}\n`;
+              buttons += `\u0009\u0009\u0009\u0009\u0009{\n\u0009\u0009\u0009\u0009\u0009\u0009"name": "§cEmpty",\n\u0009\u0009\u0009\u0009\u0009}${commaButtons}\n`;
             }
           }
-          let commaScenes = (i < 6 ) ? ',' : '';
-          scenes += (optionsScoreboards.length > 0) ? `\u0009\u0009\u0009{\n\u0009\u0009\u0009"scene_tag": "${sceneTag}_${(optionsId[0]) ? optionsId[0] : ''}${(binaryId[0]) ? binaryId[0] : ''}${(optionsId[1]) ? optionsId[1] : ''}${(binaryId[1]) ? binaryId[1] : ''}${(optionsId[2]) ? optionsId[2] : ''}${(binaryId[2]) ? binaryId[2] : ''}${(optionsId[3]) ? optionsId[3] : ''}${(binaryId[3]) ? binaryId[3] : ''}${(optionsId[4]) ? optionsId[4] : ''}${(binaryId[4]) ? binaryId[4] : ''}",${(optionsId[5]) ? optionsId[5] : ''}${(binaryId[5]) ? binaryId[5] : ''}\n\u0009\u0009\u0009"npc_name": "${NPCName}",\n\u0009\u0009\u0009"text": "${textNPC}",\n\u0009\u0009\u0009"buttons": [\n${(optionsScoreboards.length > 0) ? buttons : ''}\n\u0009\u0009\u0009\u0009]\n\u0009\u0009\u0009}${commaScenes}\n` : '';
-          dialogueJSON = `{\n\u0009"format_version": "1.14",\n\u0009"minecraft:npc_dialogue": {\n\u0009\u0009"scenes": [\n\u0009\u0009\u0009{\n\u0009\u0009\u0009\u0009"scene_tag": ${sceneTag}",\n\u0009\u0009\u0009\u0009"npc_name": "${NPCName}",\n\u0009\u0009\u0009\u0009"text": "${textNPC}",${(optionsScoreboards.length == 0) ? `\n\u0009\u0009\u0009\u0009"buttons": [\n${buttons}\u0009\u0009\u0009\u0009` : ''}"on_open_commands": [\n${openCommands}\u0009\u0009\u0009\u0009]\n\u0009\u0009\u0009},\n${scenes}\n\u0009\u0009]\n\u0009}\n}`;
+          let commaScenes = (i < 2**optionsScoreboards.length-1) ? ',' : '';
+          scenes += (optionsScoreboards.length > 0) ? `\u0009\u0009\u0009{\n\u0009\u0009\u0009"scene_tag": "${sceneTag}_${(optionsId[0]) ? optionsId[0] : ''}${(binaryId[0]) ? binaryId[0] : ''}${(optionsId[1]) ? optionsId[1] : ''}${(binaryId[1]) ? binaryId[1] : ''}${(optionsId[2]) ? optionsId[2] : ''}${(binaryId[2]) ? binaryId[2] : ''}${(optionsId[3]) ? optionsId[3] : ''}${(binaryId[3]) ? binaryId[3] : ''}${(optionsId[4]) ? optionsId[4] : ''}${(binaryId[4]) ? binaryId[4] : ''}",${(optionsId[5]) ? optionsId[5] : ''}${(binaryId[5]) ? binaryId[5] : ''}\n\u0009\u0009\u0009"npc_name": "${NPCName}",\n\u0009\u0009\u0009"text": "${textNPC}",\n\u0009\u0009\u0009"buttons": [\n${(optionsScoreboards.length > 0) ? buttons : ''}\u0009\u0009\u0009\u0009]\n\u0009\u0009\u0009}${commaScenes}\n` : '';
+          dialogueJSON = `{\n\u0009"format_version": "1.14",\n\u0009"minecraft:npc_dialogue": {\n\u0009\u0009"scenes": [\n\u0009\u0009\u0009{\n\u0009\u0009\u0009\u0009"scene_tag": ${sceneTag}",\n\u0009\u0009\u0009\u0009"npc_name": "${NPCName}",\n\u0009\u0009\u0009\u0009"text": "${textNPC}",${(optionsScoreboards.length == 0) ? `\n\u0009\u0009\u0009\u0009"buttons": [\n${buttons}\u0009\u0009\u0009\u0009],\n\u0009\u0009\u0009\u0009` : '\n\u0009\u0009\u0009\u0009'}"on_open_commands": [\n${openCommands}\u0009\u0009\u0009\u0009]\n\u0009\u0009\u0009}${(optionsScoreboards.length == 0) ? '' : ','}\n${scenes}\u0009\u0009]\n\u0009}\n}`;
           document.getElementById("dialogues").innerHTML = dialogueJSON;
         }
       }
@@ -147,11 +181,56 @@
           document.getElementById("functionFileLabel").hidden = true
         }
       }
+      let animationName, soundJSON;
+      function sounds() {
+        const animationName = document.getElementsByName("animationName")[0].value;
+        const soundId = document.getElementsByName("soundId")[0].value;
+        const equation = document.getElementsByName("equation")[0].value.replaceAll('\^','**').replace(/(\d)+x/g, `$1*x`).trim();
+        const animationLength = document.getElementsByName("animationLength")[0].value;
+        let output = '';
+        for (let x = 0, y = 0; y <= animationLength; x++) {
+          y = eval(equation);
+          if (y == animationLength) {
+            continue;
+          }
+          output += (y <= animationLength) ? `\n\u0009\u0009\u0009\u0009"${y}": "${soundId}",`: `\n\u0009\u0009\u0009\u0009"${animationLength}": "${soundId}"`;
+        }
+        let soundJSON = `{\n\u0009"format_version": "1.8.0",\n\u0009"animations": {\n\u0009\u0009"animation.${animationName}": {\n\u0009\u0009\u0009"animation_length": ${animationLength},\n\u0009\u0009\u0009"sound_effects": {${output}\n\u0009\u0009\u0009},\n\u0009\u0009\u0009"loop": true\n\u0009\u0009}\n\u0009}\n}`;
+        document.getElementById("sound").innerHTML = soundJSON;
+        
+      }
+      function downloadFile2() {
+        sounds();
+        download(`${animationName}.json`, soundJSON);
+      }
+      function openTab(evt, tab) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+      
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+      
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+      
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(tab).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
     </script>
     
   </head>
-
-  <body>
+  <div id=tabs class="tab">
+    <button class="tablinks" onclick="openTab(event, 'dialogueTab')">NPC Dialogue</button>
+    <button class="tablinks" onclick="openTab(event, 'soundTab')">Sounds</button>
+  </div>
+  <div id="dialogueTab" class="tabcontent">
     <button onclick="set()">
       Set
     </button>
@@ -184,6 +263,24 @@
       <br>
     </p>
     <textarea id="dialogues" value='' readonly=true oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
-  </body>
-  
+  </div>
+  <div id=soundTab class="tabcontent" hidden=true>
+    <strong>
+      Timed Sounds Animation Generator<br><br>
+    </strong>
+    <form method="get">
+      Animation Name: <input type="text" name="animationName"><br>
+      Sound Id: <input type="text" name="soundId"><br>
+      Animation Length: <input type="text" name="animationLength"><br>
+      Equation: <input type="text" name="equation"><br>
+    </form>
+    <button onclick="sounds()">
+      Generate
+    </button>
+    <button type="button" onclick="downloadFile2()">
+      Download
+    </button><br><br>
+    <textarea readonly id="sound">
+    </textarea>
+  </div>
 </html>
